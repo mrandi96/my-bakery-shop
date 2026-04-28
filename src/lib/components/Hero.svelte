@@ -7,8 +7,8 @@
 	<!-- Optimized Hero Image -->
 	<div class="absolute inset-0 z-0">
 		<img 
-			src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=2000" 
-			srcset="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=800 800w, https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=1200 1200w, https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=2000 2000w"
+			src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=40&w=1280" 
+			srcset="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=40&w=800 800w, https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=40&w=1200 1200w, https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=40&w=1280 1280w"
 			sizes="100vw"
 			fetchpriority="high"
 			loading="eager"

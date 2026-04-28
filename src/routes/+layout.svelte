@@ -12,28 +12,8 @@
 
 	let { children } = $props();
 
-	let activeSection = $state("top");
-
 	onMount(() => {
 		inject();
-
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						activeSection = entry.target.id;
-					}
-				});
-			},
-			{ threshold: 0.3, rootMargin: "-80px 0px -50% 0px" }
-		);
-
-		["top", "heritage", "menu", "footer"].forEach((id) => {
-			const el = document.getElementById(id);
-			if (el) observer.observe(el);
-		});
-
-		return () => observer.disconnect();
 	});
 
 	const navItems = [
@@ -70,18 +50,16 @@
 				</a>
 				<nav class="hidden lg:flex items-center space-x-10 text-sm font-semibold tracking-wide">
 					{#each navItems as item}
-						<a 
-							href={item.href} 
+						<a
+							href={item.href}
 							onclick={(e) => handleScroll(e, item.href)}
-							class="transition-all duration-300 relative py-2 {activeSection === item.href.substring(1) ? 'text-primary scale-105' : 'text-foreground/60 hover:text-primary hover:scale-105'}"
+							class="transition-all duration-300 relative py-2 text-foreground/60 hover:text-primary hover:scale-105"
 						>
 							{item.name}
-							{#if activeSection === item.href.substring(1)}
-								<span class="absolute -bottom-0.5 left-0 w-full h-0.5 bg-primary rounded-full" transition:fade></span>
-							{/if}
 						</a>
 					{/each}
 				</nav>
+
 			</div>
 
 			<div class="flex items-center gap-4">
@@ -113,14 +91,15 @@
 							</div>
 							<nav class="flex flex-col gap-2 p-6">
 								{#each navItems as item}
-									<a 
-										href={item.href} 
+									<a
+										href={item.href}
 										onclick={(e) => handleScroll(e, item.href)}
-										class="text-xl font-semibold transition-all duration-200 px-6 py-4 rounded-2xl {activeSection === item.href.substring(1) ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'hover:bg-primary/5 text-foreground/70'}"
+										class="text-xl font-semibold transition-all duration-200 px-6 py-4 rounded-2xl hover:bg-primary/5 text-foreground/70"
 									>
 										{item.name}
 									</a>
 								{/each}
+
 								<div class="mt-8 pt-8 border-t border-primary/5">
 									<Button 
 										class="w-full rounded-2xl bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-3 py-8 shadow-xl shadow-primary/20"
