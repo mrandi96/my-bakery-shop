@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-	<title>{siteConfig.shopName} - Toko Kue Tradisional Bengkulu</title>
+	<title>{siteConfig.shopName} - Toko Kue & Oleh-oleh Khas Bengkulu Tradisional</title>
 </svelte:head>
 
 <ModeWatcher />
@@ -83,7 +83,7 @@
 								<span class="sr-only">Buka menu</span>
 							</Button>
 						</Sheet.Trigger>
-						<Sheet.Content side="right" class="w-[240px] sm:w-[300px]">
+						<Sheet.Content side="right" class="w-[240px] sm:w-[300px] bg-background">
 							<Sheet.Header>
 								<Sheet.Title class="text-left font-serif">{siteConfig.shopName}</Sheet.Title>
 							</Sheet.Header>

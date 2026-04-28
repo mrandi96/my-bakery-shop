@@ -18,7 +18,7 @@
 			Cita Rasa Otentik Bengkulu, <br class="hidden md:block" /> Dipanggang Segar Setiap Hari
 		</h1>
 		<p class="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto">
-			Selamat datang di {siteConfig.shopName}. Rasakan warisan kuliner Bengkulu melalui kue-kue tradisional buatan tangan kami.
+			Pusat oleh-oleh khas Bengkulu terbaik. Selamat datang di {siteConfig.shopName}, tempat Anda merasakan warisan kuliner otentik melalui kue tradisional buatan tangan kami.
 		</p>
 		<div class="pt-8">
 			<Button 
