@@ -1,7 +1,8 @@
 export const siteConfig = {
 	shopName: "Kue Kito",
 	siteUrl: "https://kuekito.com",
-	whatsappNumber: "6281234567890",
+	whatsappNumber: "6289652514336",
+	whatsappMessageTemplate: "Halo Kue Kito, saya mau pesan [Nama Produk] silakan infokan harganya ya. Terima kasih",
 	instagramUrl: "https://instagram.com/kuekito",
 	facebookUrl: "https://facebook.com/kuekito",
 	googleMapsUrl: "https://maps.app.goo.gl/9PudFJXqCMpudH9X9",

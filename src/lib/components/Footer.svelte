@@ -13,56 +13,62 @@
 			</p>
 		</div>
 		
-		<div class="space-y-4">
+		<div class="space-y-6">
 			<h4 class="text-xl font-bold flex items-center justify-center md:justify-start gap-2">
-				<MapPin class="w-5 h-5 text-white" />
+				<MapPin class="w-6 h-6 text-primary" />
 				Lokasi & Jam Buka
 			</h4>
-			<ul class="text-white/70 space-y-2">
+			<ul class="text-white/80 space-y-3">
 				<li>
 					<a 
 						href={siteConfig.googleMapsUrl} 
 						target="_blank" 
-						class="hover:text-white transition-colors hover:underline"
+						class="hover:text-primary transition-colors hover:underline leading-relaxed block"
 					>
 						{siteConfig.location}
 					</a>
 				</li>
-				<li class="flex items-center justify-center md:justify-start gap-2">
-					<Clock class="w-4 h-4" />
+				<li class="flex items-center justify-center md:justify-start gap-3">
+					<Clock class="w-5 h-5 text-primary" />
 					{siteConfig.operatingHours}
 				</li>
 			</ul>
 		</div>
 		
-		<div class="space-y-4">
+		<div class="space-y-6">
 			<h4 class="text-xl font-bold flex items-center justify-center md:justify-start gap-2">
 				Ikuti Kami
 			</h4>
-			<div class="flex flex-col gap-3">
+			<div class="flex flex-col gap-4">
 				<a 
 					href={siteConfig.instagramUrl} 
 					target="_blank" 
-					class="flex items-center justify-center md:justify-start gap-3 text-white/70 hover:text-white transition-colors group"
+					class="flex items-center justify-center md:justify-start gap-4 text-white/80 hover:text-white transition-colors group"
 				>
-					<BrandIcon type="instagram" class="w-5 h-5 text-white group-hover:text-primary transition-colors" />
-					<span>Instagram</span>
+					<div class="p-2 bg-white/5 rounded-lg group-hover:bg-primary transition-colors">
+						<BrandIcon type="instagram" class="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+					</div>
+					<span class="text-lg">Instagram</span>
 				</a>
 				<a 
 					href={siteConfig.facebookUrl} 
 					target="_blank" 
-					class="flex items-center justify-center md:justify-start gap-3 text-white/70 hover:text-white transition-colors group"
+					class="flex items-center justify-center md:justify-start gap-4 text-white/80 hover:text-white transition-colors group"
 				>
-					<BrandIcon type="facebook" class="w-5 h-5 text-white group-hover:text-primary transition-colors" />
-					<span>Facebook</span>
+					<div class="p-2 bg-white/5 rounded-lg group-hover:bg-primary transition-colors">
+						<BrandIcon type="facebook" class="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+					</div>
+					<span class="text-lg">Facebook</span>
 				</a>
 				<a 
 					href={`https://wa.me/${siteConfig.whatsappNumber}`} 
 					target="_blank" 
-					class="flex items-center justify-center md:justify-start gap-3 text-white/70 hover:text-white transition-colors group"
+					class="flex items-center justify-center md:justify-start gap-4 text-white/80 hover:text-white transition-colors group"
 				>
-					<BrandIcon type="whatsapp" class="w-5 h-5 text-white group-hover:text-primary transition-colors" />
-					<span>WhatsApp</span>
+					<div class="p-2 bg-white/5 rounded-lg group-hover:bg-primary transition-colors">
+						<BrandIcon type="whatsapp" class="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+					</div>
+					<span class="text-lg">WhatsApp</span>
 				</a>
 			</div>
 		</div>

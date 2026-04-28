@@ -8,11 +8,32 @@
 	import BrandIcon from "$lib/components/icons/BrandIcon.svelte";
 	import { onMount } from 'svelte';
 	import { inject } from '@vercel/analytics';
+	import { fade } from 'svelte/transition';
 
 	let { children } = $props();
 
+	let activeSection = $state("top");
+
 	onMount(() => {
 		inject();
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						activeSection = entry.target.id;
+					}
+				});
+			},
+			{ threshold: 0.3, rootMargin: "-80px 0px -50% 0px" }
+		);
+
+		["top", "heritage", "menu", "footer"].forEach((id) => {
+			const el = document.getElementById(id);
+			if (el) observer.observe(el);
+		});
+
+		return () => observer.disconnect();
 	});
 
 	const navItems = [
@@ -42,69 +63,74 @@
 
 <div class="flex min-h-screen flex-col" id="top">
 	<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-		<div class="w-full flex h-16 items-center justify-between px-4 md:px-8">
-			<div class="flex items-center gap-8">
+		<div class="w-full flex h-16 sm:h-20 items-center justify-between px-4 md:px-12 lg:px-20">
+			<div class="flex items-center gap-12">
 				<a href="/" class="flex items-center space-x-2">
-					<span class="font-bold text-xl text-primary font-serif uppercase tracking-wider">{siteConfig.shopName}</span>
+					<span class="font-bold text-xl sm:text-2xl text-primary font-serif uppercase tracking-[0.2em]">{siteConfig.shopName}</span>
 				</a>
-				<nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+				<nav class="hidden lg:flex items-center space-x-10 text-sm font-semibold tracking-wide">
 					{#each navItems as item}
 						<a 
 							href={item.href} 
 							onclick={(e) => handleScroll(e, item.href)}
-							class="transition-colors hover:text-primary text-foreground/70"
+							class="transition-all duration-300 relative py-2 {activeSection === item.href.substring(1) ? 'text-primary scale-105' : 'text-foreground/60 hover:text-primary hover:scale-105'}"
 						>
 							{item.name}
+							{#if activeSection === item.href.substring(1)}
+								<span class="absolute -bottom-0.5 left-0 w-full h-0.5 bg-primary rounded-full" transition:fade></span>
+							{/if}
 						</a>
 					{/each}
 				</nav>
 			</div>
 
 			<div class="flex items-center gap-4">
-				<div class="hidden md:flex items-center gap-4">
-					
+				<div class="hidden sm:flex items-center gap-4">
 					<Button 
-						class="rounded-full bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
+						class="rounded-full bg-primary hover:bg-primary/90 text-white flex items-center gap-2 px-6 py-5 shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 active:translate-y-0"
 						href={`https://wa.me/${siteConfig.whatsappNumber}`}
 						target="_blank"
 					>
-						<BrandIcon type="whatsapp" class="w-4 h-4" />
-						Pesan Sekarang
+						<BrandIcon type="whatsapp" class="w-4 h-4 fill-current" />
+						<span class="font-bold">Pesan Sekarang</span>
 					</Button>
 				</div>
 				
 				<!-- Mobile Menu -->
-				<div class="md:hidden flex items-center gap-2">
-					
+				<div class="lg:hidden flex items-center gap-2">
 					<Sheet.Root>
 						<Sheet.Trigger>
-							<Button variant="outline" size="icon">
-								<Menu class="h-5 w-5" />
+							<Button variant="ghost" size="icon" class="hover:bg-primary/10">
+								<Menu class="h-7 w-7 text-primary" />
 								<span class="sr-only">Buka menu</span>
 							</Button>
 						</Sheet.Trigger>
-						<Sheet.Content side="right" class="w-[240px] sm:w-[300px] bg-background">
-							<Sheet.Header>
-								<Sheet.Title class="text-left font-serif">{siteConfig.shopName}</Sheet.Title>
-							</Sheet.Header>
-							<nav class="flex flex-col gap-2 mt-8">
+						<Sheet.Content side="right" class="w-[280px] sm:w-[350px] bg-background border-l border-primary/10 p-0 flex flex-col">
+							<div class="p-8 border-b border-primary/5">
+								<Sheet.Header>
+									<Sheet.Title class="text-left font-serif text-primary text-2xl uppercase tracking-widest leading-none">{siteConfig.shopName}</Sheet.Title>
+								</Sheet.Header>
+							</div>
+							<nav class="flex flex-col gap-2 p-6">
 								{#each navItems as item}
 									<a 
 										href={item.href} 
 										onclick={(e) => handleScroll(e, item.href)}
-										class="text-lg font-medium transition-colors hover:text-primary pl-4 py-2 hover:bg-muted rounded-md"
+										class="text-xl font-semibold transition-all duration-200 px-6 py-4 rounded-2xl {activeSection === item.href.substring(1) ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'hover:bg-primary/5 text-foreground/70'}"
 									>
 										{item.name}
 									</a>
 								{/each}
-								<Button 
-									class="mt-4 rounded-full bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
-									href={`https://wa.me/${siteConfig.whatsappNumber}`}
-									target="_blank"
-								>
-									<BrandIcon type="whatsapp" class="w-4 h-4" />
-									Pesan Sekarang
-								</Button>
+								<div class="mt-8 pt-8 border-t border-primary/5">
+									<Button 
+										class="w-full rounded-2xl bg-primary hover:bg-primary/90 text-white flex items-center justify-center gap-3 py-8 shadow-xl shadow-primary/20"
+										href={`https://wa.me/${siteConfig.whatsappNumber}`}
+										target="_blank"
+									>
+										<BrandIcon type="whatsapp" class="w-6 h-6 fill-current" />
+										<span class="text-lg font-bold">Pesan Sekarang</span>
+									</Button>
+								</div>
 							</nav>
 						</Sheet.Content>
 					</Sheet.Root>
