@@ -4,62 +4,97 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Sheet from "$lib/components/ui/sheet";
 	import { Menu } from "@lucide/svelte";
-	import ThemeToggle from "$lib/components/theme-toggle.svelte";
+	import { siteConfig } from "$lib/config";
+	import BrandIcon from "$lib/components/icons/BrandIcon.svelte";
 
 	let { children } = $props();
 
 	const navItems = [
-		{ name: "Home", href: "/" },
-		{ name: "About", href: "/about" },
-		{ name: "Services", href: "/services" },
-		{ name: "Contact", href: "/contact" },
+		{ name: "Beranda", href: "#top" },
+		{ name: "Tentang Kami", href: "#heritage" },
+		{ name: "Menu", href: "#menu" },
+		{ name: "Kontak", href: "#footer" },
 	];
+
+	function handleScroll(e: MouseEvent, href: string) {
+		if (href.startsWith('#')) {
+			e.preventDefault();
+			const id = href.substring(1);
+			const element = document.getElementById(id);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			}
+		}
+	}
 </script>
 
 <ModeWatcher />
 
-<div class="flex min-h-screen flex-col">
+<div class="flex min-h-screen flex-col" id="top">
 	<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-		<div class="container mx-auto flex h-14 items-center justify-between px-4">
-			<div class="flex items-center gap-6">
+		<div class="w-full flex h-16 items-center justify-between px-4 md:px-8">
+			<div class="flex items-center gap-8">
 				<a href="/" class="flex items-center space-x-2">
-					<span class="font-bold sm:inline-block">SVELTE BASE</span>
+					<span class="font-bold text-xl text-primary font-serif uppercase tracking-wider">{siteConfig.shopName}</span>
 				</a>
-				<nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+				<nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
 					{#each navItems as item}
-						<a href={item.href} class="transition-colors hover:text-foreground/80 text-foreground/60">{item.name}</a>
+						<a 
+							href={item.href} 
+							onclick={(e) => handleScroll(e, item.href)}
+							class="transition-colors hover:text-primary text-foreground/70"
+						>
+							{item.name}
+						</a>
 					{/each}
 				</nav>
 			</div>
 
-			<div class="flex items-center gap-2">
-				<div class="hidden md:flex">
-					<ThemeToggle />
+			<div class="flex items-center gap-4">
+				<div class="hidden md:flex items-center gap-4">
+					
+					<Button 
+						class="rounded-full bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
+						href={`https://wa.me/${siteConfig.whatsappNumber}`}
+						target="_blank"
+					>
+						<BrandIcon type="whatsapp" class="w-4 h-4" />
+						Pesan Sekarang
+					</Button>
 				</div>
 				
 				<!-- Mobile Menu -->
 				<div class="md:hidden flex items-center gap-2">
-					<ThemeToggle />
+					
 					<Sheet.Root>
 						<Sheet.Trigger>
 							<Button variant="outline" size="icon">
 								<Menu class="h-5 w-5" />
-								<span class="sr-only">Toggle menu</span>
+								<span class="sr-only">Buka menu</span>
 							</Button>
 						</Sheet.Trigger>
 						<Sheet.Content side="right" class="w-[240px] sm:w-[300px]">
 							<Sheet.Header>
-								<Sheet.Title>Menu</Sheet.Title>
+								<Sheet.Title class="text-left font-serif">{siteConfig.shopName}</Sheet.Title>
 							</Sheet.Header>
 							<nav class="flex flex-col gap-2 mt-8">
 								{#each navItems as item}
 									<a 
 										href={item.href} 
+										onclick={(e) => handleScroll(e, item.href)}
 										class="text-lg font-medium transition-colors hover:text-primary pl-4 py-2 hover:bg-muted rounded-md"
 									>
 										{item.name}
 									</a>
 								{/each}
+								<Button 
+									class="mt-4 rounded-full bg-primary hover:bg-primary/90 text-white flex items-center gap-2"
+									href={`https://wa.me/${siteConfig.whatsappNumber}`}
+									target="_blank"
+								>
+									<BrandIcon type="whatsapp" class="w-4 h-4" />
+									Pesan Sekarang
+								</Button>
 							</nav>
 						</Sheet.Content>
 					</Sheet.Root>
@@ -68,17 +103,7 @@
 		</div>
 	</header>
 
-	<main class="flex-1">
-		<div class="container mx-auto p-4 md:p-8">
-			{@render children()}
-		</div>
+	<main class="flex-1 w-full overflow-x-hidden">
+		{@render children()}
 	</main>
-
-	<footer class="border-t py-6 md:py-0">
-		<div class="container mx-auto flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row px-4">
-			<p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
-				Built with Svelte 5 and shadcn-svelte.
-			</p>
-		</div>
-	</footer>
 </div>

@@ -4,7 +4,7 @@
 	import * as Card from "$lib/components/ui/card";
 	import { formatIDR } from "$lib/utils/currency";
 	import { getWhatsAppLink } from "$lib/utils/whatsapp";
-	import { MessageCircle } from "lucide-svelte";
+	import BrandIcon from "./icons/BrandIcon.svelte";
 
 	let { product }: { product: Product } = $props();
 </script>
@@ -22,9 +22,11 @@
 			<Card.Title class="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
 				{product.name}
 			</Card.Title>
+			<!-- 
 			<span class="text-primary font-bold text-lg whitespace-nowrap">
 				{formatIDR(product.price)}
 			</span>
+			-->
 		</div>
 		<Card.Description class="text-foreground/70 text-base leading-relaxed">
 			{product.description}
@@ -36,8 +38,8 @@
 			href={getWhatsAppLink(product.name)}
 			target="_blank"
 		>
-			<MessageCircle class="w-5 h-5" />
-			Order via WhatsApp
+			<BrandIcon type="whatsapp" class="w-5 h-5" />
+			Pesan via WhatsApp
 		</Button>
 	</Card.Footer>
 </Card.Root>

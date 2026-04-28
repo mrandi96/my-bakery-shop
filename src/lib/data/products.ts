@@ -10,43 +10,43 @@ export const products: Product[] = [
 	{
 		id: "1",
 		name: "Bay Tat",
-		description: "A legendary royal Bengkulu pastry with a soft, buttery crust and a sweet pineapple jam filling.",
+		description: "Kue legendaris khas Bengkulu dengan tekstur lembut, rasa mentega yang kaya, dan isian selai nanas yang manis.",
 		price: 35000,
-		imageUrl: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/baytat.webp"
 	},
 	{
 		id: "2",
 		name: "Kue Siput",
-		description: "Crunchy, snail-shaped cookies made with peanuts and a secret blend of spices.",
+		description: "Camilan renyah berbentuk siput yang terbuat dari kacang tanah dengan perpaduan bumbu rahasia yang gurih.",
 		price: 25000,
-		imageUrl: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/kue-siput.webp"
 	},
 	{
 		id: "3",
-		name: "Bolu Kojo",
-		description: "A fragrant green sponge cake infused with pandan and coconut milk, a true heritage favorite.",
+		name: "Bolu Koja",
+		description: "Kue spons hijau yang harum dengan aroma pandan dan santan kelapa, favorit warisan turun-temurun.",
 		price: 45000,
-		imageUrl: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/bolu-koja.webp"
 	},
 	{
 		id: "4",
 		name: "Lapis Legit",
-		description: "Indonesian thousand-layer cake, rich in butter and spices, meticulously baked layer by layer.",
+		description: "Kue lapis khas Indonesia yang kaya akan mentega dan rempah-rempah, dipanggang lapis demi lapis dengan penuh ketelitian.",
 		price: 120000,
-		imageUrl: "https://images.unsplash.com/photo-1535141123063-3bb610932e47?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/lapis-legit.webp"
 	},
 	{
 		id: "5",
 		name: "Kue Perut Punai",
-		description: "Traditional Bengkulu snack made from glutinous rice flour, shaped like a bird's stomach and fried to perfection.",
+		description: "Camilan tradisional Bengkulu yang terbuat dari tepung beras ketan, dibentuk menyerupai perut burung punai dan digoreng renyah.",
 		price: 20000,
-		imageUrl: "https://images.unsplash.com/photo-1505253149613-112d21d9f6a9?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/perut-punai.webp"
 	},
 	{
 		id: "6",
 		name: "Lepek Binti",
-		description: "A savory traditional cake filled with spiced minced beef and wrapped in banana leaves.",
+		description: "Kue tradisional gurih berisi daging sapi cincang berbumbu yang dibungkus dengan daun pisang.",
 		price: 15000,
-		imageUrl: "https://images.unsplash.com/photo-1600431521340-491eca880813?auto=format&fit=crop&q=80&w=800&h=1000"
+		imageUrl: "/lepek-binti.webp"
 	}
 ];

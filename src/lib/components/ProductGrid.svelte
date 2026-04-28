@@ -3,12 +3,12 @@
 	import ProductCard from "./ProductCard.svelte";
 </script>
 
-<section id="menu" class="py-24 px-4 bg-accent/10">
+<section id="menu" class="py-24 px-4 bg-accent/10 scroll-mt-10">
 	<div class="max-w-7xl mx-auto space-y-16">
 		<div class="text-center space-y-4">
-			<h2 class="text-4xl md:text-5xl font-bold text-primary">Our Traditional Menu</h2>
+			<h2 class="text-4xl md:text-5xl font-bold text-primary">Menu Tradisional Kami</h2>
 			<p class="text-xl text-foreground/70 max-w-2xl mx-auto font-light">
-				Explore our curated selection of Bengkulu's finest pastries and cakes.
+				Jelajahi pilihan kue dan kudapan terbaik khas Bengkulu yang kami kurasi khusus untuk Anda.
 			</p>
 		</div>
 		
