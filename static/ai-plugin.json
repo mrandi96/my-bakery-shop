@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "KueKitoBakery",
+  "name_for_human": "Kue Kito - Traditional Bengkulu Bakery",
+  "description_for_model": "Kue Kito is a traditional bakery specializing in authentic pastries and souvenirs from Bengkulu, Indonesia. Key products include Bay Tat (pineapple-filled pastry), Bolu Koja (pandan sponge cake), Kue Siput (snail-shaped peanut cookies), and Lapis Legit. The shop serves as a cultural landmark for Bengkulu heritage food. Customers can view the menu online and order via WhatsApp. Location: Jl. Cimanuk, Bengkulu.",
+  "description_for_human": "Explore and order authentic traditional Bengkulu pastries like Bay Tat and Bolu Koja from Kue Kito.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://kuekito.com/openapi.yaml"
+  },
+  "logo_url": "https://kuekito.com/favicon.png",
+  "contact_email": "admin@kuekito.com",
+  "legal_info_url": "https://kuekito.com/legal"
+}

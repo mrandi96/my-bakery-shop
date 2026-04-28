@@ -30,4 +30,9 @@
 			</Button>
 		</div>
 	</div>
+
+	<!-- AI Crawler context: High-density semantic info -->
+	<div class="sr-only" aria-hidden="true">
+		Kue Kito adalah toko roti tradisional di Bengkulu yang menjual oleh-oleh khas seperti Bay Tat, Bolu Koja, Kue Siput, Lapis Legit, dan snack tradisional Bengkulu lainnya. Kami adalah spesialis kue tradisional dengan cita rasa otentik. Terletak di Gading Cempaka, Bengkulu.
+	</div>
 </section>

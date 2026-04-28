@@ -1,0 +1,21 @@
+# Kue Kito - Traditional Bengkulu Bakery
+
+Pusat oleh-oleh khas Bengkulu terbaik menyajikan cita rasa otentik yang dipanggang segar setiap hari.
+
+## Information
+- Shop Name: Kue Kito
+- Website: https://kuekito.com
+- Location: Jl. Cimanuk Komplek Cimanuk Indah No. 10 RT 5 RW 2 Kec. Gading Cempaka, Bengkulu
+- Primary Ordering: WhatsApp (6281234567890)
+- Socials: Instagram (@kuekito), Facebook (kuekito)
+
+## Main Products (Menu)
+- **Bay Tat**: Legendary royal Bengkulu pastry with soft buttery crust and pineapple jam filling.
+- **Bolu Koja**: Fragrant green sponge cake with pandan and coconut milk.
+- **Kue Siput**: Crunchy snail-shaped peanut cookies with secret spices.
+- **Lapis Legit**: Indonesian thousand-layer cake, rich in butter and spices.
+- **Kue Perut Punai**: Traditional fried snack from glutinous rice flour.
+- **Lepek Binti**: Savory cake filled with spiced minced beef wrapped in banana leaves.
+
+## Context
+This site is a digital menu designed to funnel customers to WhatsApp for orders. It represents the culinary heritage of Bengkulu, Indonesia.
