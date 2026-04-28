@@ -1,5 +1,6 @@
 export const siteConfig = {
 	shopName: "Kue Kito",
+	siteUrl: "https://kuekito.com",
 	whatsappNumber: "6281234567890",
 	instagramUrl: "https://instagram.com/kuekito",
 	facebookUrl: "https://facebook.com/kuekito",
