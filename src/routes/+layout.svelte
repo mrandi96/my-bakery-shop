@@ -6,8 +6,14 @@
 	import { Menu } from "@lucide/svelte";
 	import { siteConfig } from "$lib/config";
 	import BrandIcon from "$lib/components/icons/BrandIcon.svelte";
+	import { onMount } from 'svelte';
+	import { inject } from '@vercel/analytics';
 
 	let { children } = $props();
+
+	onMount(() => {
+		inject();
+	});
 
 	const navItems = [
 		{ name: "Beranda", href: "#top" },
