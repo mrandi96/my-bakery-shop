@@ -1,0 +1,33 @@
+<script lang="ts">
+	import { Button } from "$lib/components/ui/button";
+	import { siteConfig } from "$lib/config";
+</script>
+
+<section class="relative h-[80vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center text-center px-4">
+	<!-- Placeholder Background Image -->
+	<div class="absolute inset-0 z-0">
+		<img 
+			src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&q=80&w=2000" 
+			alt="Fresh Pastries" 
+			class="w-full h-full object-cover brightness-50"
+		/>
+	</div>
+	
+	<div class="relative z-10 max-w-4xl space-y-6">
+		<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
+			Authentic Bengkulu Flavors, <br class="hidden md:block" /> Baked Fresh Daily
+		</h1>
+		<p class="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto">
+			Welcome to {siteConfig.shopName}. Taste the heritage of Bengkulu through our handmade, traditional pastries.
+		</p>
+		<div class="pt-8">
+			<Button 
+				size="lg" 
+				class="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105"
+				onclick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
+			>
+				View Our Menu
+			</Button>
+		</div>
+	</div>
+</section>
