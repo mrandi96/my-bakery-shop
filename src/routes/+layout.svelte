@@ -34,6 +34,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{siteConfig.shopName} - Toko Kue Tradisional Bengkulu</title>
+</svelte:head>
+
 <ModeWatcher />
 
 <div class="flex min-h-screen flex-col" id="top">

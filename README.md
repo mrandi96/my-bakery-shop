@@ -1,4 +1,4 @@
-# my-bakery-shop
+# kue-kito
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
@@ -8,14 +8,14 @@ If you're seeing this, you've probably already done this step. Congrats!
 
 ```sh
 # create a new project
-npx sv create my-bakery-shop
+npx sv create kue-kito
 ```
 
 To recreate this project with the same configuration:
 
 ```sh
 # recreate this project
-npx sv@0.15.1 create --template minimal --types ts --add tailwindcss="plugins:none" --install npm my-bakery-shop
+npx sv@0.15.1 create --template minimal --types ts --add tailwindcss="plugins:none" --install npm kue-kito
 ```
 
 ## Developing
